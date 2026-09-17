@@ -1,0 +1,41 @@
+27. Remove Element
+
+
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        left=0
+        right=len(nums)-1
+       
+        while left <= right:
+            if nums[left]==val and nums[right]!=val:
+                nums[left],nums[right]=nums[right],nums[left]
+                left+=1
+                right-=1
+            elif nums[left]==val and nums[right]==val:
+                right-=1
+            else:
+                left+=1    
+        return left       
+S=Solution()                
+            
+
+
+
+Input
+nums =
+[3,2,2,3]
+val =
+3
+Output
+[2,2]
+Expected
+[2,2]
+            
+        
+
+        
